@@ -51,7 +51,8 @@ src_prepare() {
 
 src_compile() {
 	append-cflags -std=gnu89 # old codebase, incompatible with c2x
-	append-cflags -I../include -DDLB -DSECURE -DTIMED_DELAY -DVISION_TABLES -DDUMPLOG -DSCORE_ON_BOTL -DCURSES_GRAPHICS
+	append-cflags -I../include -DDLB -DSECURE -DTIMED_DELAY -DVISION_TABLES -DDUMPLOG -DSCORE_ON_BOTL
+	append-cflags -DCURSES_GRAPHICS
 	append-cflags '-DCOMPRESS=\"${EPREFIX}/bin/gzip\"' '-DCOMPRESS_EXTENSION=\".gz\"'
 	append-cflags "-DHACKDIR=\\\"${EPREFIX}/usr/$(get_libdir)/nethack\\\""
 	append-cflags "-DVAR_PLAYGROUND=\\\"${EPREFIX}/var/games/nethack\\\""
