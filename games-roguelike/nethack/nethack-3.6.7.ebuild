@@ -46,8 +46,9 @@ PATCHES=(
 src_prepare() {
 	default
 
-	cp "${FILESDIR}/${PN}-3.6.3-hint-$(usex X x11 tty)" hint || die "Failed to copy hint file"
-	sys/unix/setup.sh hint || die "Failed to run setup.sh"
+#	cp "${FILESDIR}/${PN}-3.6.3-hint-$(usex X x11 tty)" hint || die "Failed to copy hint file"
+#	sys/unix/setup.sh hint || die "Failed to run setup.sh"
+	sys/unix/setup.sh hints/linux || die "Failed to run setup.sh"
 }
 
 src_compile() {
